@@ -1,0 +1,424 @@
+html,
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    margin: 0;
+    margin-bottom: 1em;
+    color: #123456;
+}
+
+hr {
+    line-height: 0px;
+    height: 1px;
+    border-style: solid none none none;
+    color: #123456;
+    color: #f8f8f8;
+}
+
+input::-moz-focus-outer,
+input::-moz-focus-inner,
+input:focus,
+button::-moz-focus-outer,
+button::-moz-focus-outer,
+button:focus {
+    border: 0;
+    outline: none;
+}
+
+canvas {
+    display: block;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0aa5ff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+}
+
+.title {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    top: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50% min-content auto;
+    grid-gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.title h1 {
+    justify-self: center;
+    align-self: end;
+    color: #f8f8f8;
+    font-size: 5em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.title .emph {
+    color: #ffc43d;
+    /* color: #06d6a0; */
+}
+
+.title h3 {
+    justify-self: center;
+    align-self: start;
+    color: #f8f8f8;
+    font-size: 1.85em;
+    font-weight: 400;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.title button {
+    justify-self: center;
+    align-self: center;
+    padding: 0em 1em;
+    height: 4rem;
+    background-color: #06d6a0;
+    border-radius: 3em;
+    border-style: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #f8f8f8;
+    font-size: 1.5em;
+    font-weight: 200;
+}
+
+.main {
+    /* height: 300vh; */
+    background-color: #f8f8f8;
+}
+
+.main .emph {
+    color: #06d6a0;
+}
+
+.main .description {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main .question {
+    display: grid;
+    grid-template-rows: 30% auto auto;
+    background-color: #f8f8f8;
+    font-size: 2.5em;
+    padding: 2rem;
+}
+
+.main .question p {
+    grid-row: 2;
+    margin: 0;
+}
+
+.main .answer {
+    background-color: #efefef;
+    font-size: 1.2em;
+    padding: 2rem 4rem 1rem;
+}
+
+.step {
+    padding: 2em;
+    text-align: center;
+    min-height: 6em;
+
+
+    position: relative;
+}
+
+.step .step-number {
+    position: absolute;
+    color: #e6e6e6;
+    padding-top: 1rem;
+    font-size: 5rem;
+    font-weight: 600;
+    left: 15%;
+}
+
+/* .step .step-num {
+    position: absolute;
+} */
+
+.step .step-name {
+    color: #123456;
+    font-size: 2.5rem;
+}
+
+.step .step-subname {
+    height: 0;
+    color: #06d6a0;
+}
+
+.step .step-warning {
+    position: relative;
+    top: 1.5rem;
+    height: 0;
+    color: #f25f5c;
+}
+
+.step .dollar-sign::before {
+    content: "$";
+    position: absolute;
+    top: -0.75em;
+    left: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 3.5rem;
+    color: #0aa5ff;
+}
+
+.step span {
+    position: relative;
+    height: 0;
+    width: 0;
+}
+
+.step input {
+    margin-top: 3rem;
+    width: 20rem;
+    max-width: 75vw;
+    height: 5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 200;
+    text-align: center;
+    color: #0aa5ff;
+    border-style: none;
+    background-color: #efefef;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.step input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.step input::-webkit-outer-spin-button,
+.step input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.step .submit-button {
+    background-color: #ffc43d;
+    width: 20rem;
+    border-radius: 3em;
+    border-style: none;
+    color: #123456;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    padding: 0 2em;
+    min-height: 4em;
+    background-color: #06d6a0;
+    /* background-color: #efefef; */
+    /* background-color: #ffc43d; */
+    /* background-color: #0aa5ff; */
+    transition: all 2s;
+}
+
+.results .result-heading {
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    /* color: #f8f8f8; */
+    color: #123456;
+}
+
+.results .result-display {
+    transition: all 2s;
+    opacity: 0;
+}
+
+.results .submit-button {
+    background-color: #06d6a0;
+    width: 12rem;
+    height: 4rem;
+    border-radius: 3em;
+    border-style: none;
+    color: #f8f8f8;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    font-weight: 200;
+    margin: 2rem 0 4rem 0;
+}
+
+.results-list,
+.exclusions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+}
+
+.food-exclude,
+.excluded-item {
+    position: relative;
+    top: 0.5em;
+    width: 2em;
+    height: 2em;
+}
+
+input[class=food-exclude]+label {
+    color: #f8f8f8;
+}
+
+input[class=food-exclude]:checked+label {
+    color: #f25f5c;
+    text-decoration-line: line-through;
+}
+
+input[class=excluded-item]+label {
+    color: #123456;
+}
+
+input[class=excluded-item]:checked+label {
+    color: #06d6a0;
+}
+
+.nutrition-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    text-align: center;
+}
+
+
+.footer {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    justify-content: center;
+    align-content: center;
+    min-height: 16rem;
+    background-color: #222;
+    color: #efefef;
+}
+
+.footer .mission-statement {
+    grid-row: 1;
+    grid-column: 1/3;
+    padding: 2rem;
+}
+
+.footer .groceri-logo {
+    display: grid;
+    grid-template-columns: min-content auto;
+    padding: 2rem;
+    align-self: center;
+    font-size: 2.5rem;
+    font-weight: 600;    
+}
+
+.footer .groceri-logo a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.footer .footer-text-container {
+    padding-left: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.footer .footer-text h3 {
+    text-decoration: underline;
+    color: #555;
+}
+
+.footer .footer-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-text ul li {
+    padding-bottom: 0.6rem;
+}
+
+.footer .footer-text a {
+    text-decoration: none;
+    color: #06d6a0;
+}
+
+.footer .footer-text a:hover {
+    color: #91eed5;
+}
+
+.footer .copyright {
+    grid-row: 2;
+    font-size: 1rem;
+    font-weight: normal;
+    text-align: right;
+}
+
+/* ========================================================================== */
+/* ============================= MEDIA QUERY ================================ */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
+    .title {
+        height: 70vh;
+        font-size: 0.8em;
+    }
+
+    .main .description {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+
+    .main .question {
+        display: inline-block;
+        padding: 2rem 1rem;
+    }
+
+    .main .answer {
+        padding: 2rem 1rem;
+    }
+
+
+    .footer .mission-statement {
+        padding: 2rem 1rem;
+    }
+
+    .footer .groceri-logo {
+        grid-column: 1/3;
+        grid-row: 3;
+        grid-template-columns: min-content;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer .footer-text-container {
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        grid-column: 1/3;
+    }
+}
+

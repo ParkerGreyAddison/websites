@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,600" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- JavaScript -->
+    <script src="./particles.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+
+    <title>
+        results.io
+    </title>
+</head>
+
+<body>
+
+
+
+    
+    <div class="title">
+        <div id="particles-js"></div>
+        <h1>this is <span class="emph">results.io</span></h1>
+        <h3>a site to submit forms and display results</h3>
+        <button onclick="scrollToSection('#data-entry')">
+            take me to the forms
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="description">
+            <div class="question">
+                <p>What is <span class="emph">results.io</span>?
+                    <br>How does it work?</p>
+            </div>
+            <div class="answer">
+                <p><span class="emph">results.io</span> is a beautiful form submission website.</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident id, quasi eveniet delectus iusto
+                    ea commodi sed ducimus quas adipisci.</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium architecto maxime a sit
+                    placeat provident minima eaque corrupti sunt rem nesciunt expedita distinctio earum ipsa, soluta
+                    accusantium ex possimus adipisci?</p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus ad consectetur magni eaque vel.
+                    Suscipit.</p>
+            </div>
+        </div>
+
+        <form id="form" onsubmit="submitForm(); return false;">
+
+            <div class="results" id="results">
+                <div class="result-head">
+                    <h3 class="result-heading" id="result-message">Once you submit the form, your results will appear
+                        here...</h3>
+                </div>
+                <div class="result-display" id="result-display">
+
+                </div>
+            </div>
+
+            <div class="data-entry" id="data-entry">
+                <div class="step">
+                    <div class="step-number">
+                        1.
+                    </div>
+                    <div class="step-name">
+                        Did you hear about?
+                    </div>
+                    <input type="text" name="field1" id="field1" class="text-input-field" required>
+                </div>
+                <div class="step">
+                    <div class="step-number">
+                        2.
+                    </div>
+                    <div class="step-name">
+                        And she said what?
+                    </div>
+                    <div class="step-subname">
+                        this must be a positive integer, try it incorrectly first
+                    </div>
+                    <div class="step-warning" id="timeframe-warning"></div>
+                    <span>
+                        <input type="number" name="field2" id="field2" class="number-input-field" oninput="validateTimeframe(this.value)"
+                            required>
+                    </span>
+                </div>
+                <div class="step">
+                    <div class="step-number">
+                        3.
+                    </div>
+                    <div class="step-name">
+                        Ohmygosh, actually?
+                    </div>
+                    <div class="step-warning" id="budget-warning"></div>
+                    <div class="step-subname">
+                        this is an optional field, try without it first
+                    </div>
+                    <span class="dollar-sign">
+                        <input type="number" name="field3" id="field3" class="number-input-field"
+                            oninput="validateBudget(this.value)">
+                    </span>
+                    <!-- <div class="step-num">3.</div> -->
+                </div>
+                <div class="step">
+                    <div class="step-number">
+                        4.
+                    </div>
+                    <div class="step-name">
+                        How could she!
+                    </div>
+                    <input type="submit" value="generate results" class="submit-button" id="submit">
+                </div>
+            </div>
+
+        </form>
+
+        <div class="footer" id="footer">
+            <div class="mission-statement">
+                Our Mission: Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ad laudantium provident,
+                culpa delectus voluptatum, nesciunt perferendis, reiciendis iure quas aliquam facere numquam. Sed
+                recusandae, incidunt temporibus eaque laboriosam nemo, nesciunt odio libero perferendis eum delectus
+                aperiam minima adipisci quod.
+            </div>
+            <div class="groceri-logo">
+                <a href="">results.io</a>
+                <div class="copyright">&copy; 2018 results.io</div>
+            </div>
+            <div class="footer-text-container">
+                <div class="footer-text">
+                    <h3>FOR THE CURIOUS</h3>
+                    <ul>
+                        <li><a href="">How results.io works</a></li>
+                        <li><a href="">About the creators</a></li>
+                    </ul>
+                </div>
+                <div class="footer-text">
+                    <h3>MEDIA INFO</h3>
+                    <ul>
+                        <li><a href="">Contact us</a></li>
+                        <li><a href="">Share this tool</a></li>
+                    </ul>
+                </div>
+                <div class="footer-text">
+                    <h3>LEGAL INFO</h3>
+                    <ul>
+                        <li><a href="">Terms of Use</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
